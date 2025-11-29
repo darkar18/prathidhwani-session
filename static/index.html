@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Audience Intelligence</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>👤 User Profile</h2>
+            <p class="subtitle">Please enter your details to start.</p>
+
+            <div class="form-group">
+                <label for="user-name">Name</label>
+                <input type="text" id="user-name" placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+                <label for="user-email">Email</label>
+                <input type="email" id="user-email" placeholder="john@example.com">
+            </div>
+
+            <button id="start-chat-btn">Start Chat</button>
+        </div>
+
+        <div class="main-chat">
+            <header>
+                <h1>✨ AI Audience Intelligence</h1>
+                <div class="status-indicator">
+                    <span class="dot"></span>
+                    <span>System Active</span>
+                </div>
+            </header>
+
+            <div id="chat-window">
+                <!-- Messages will appear here -->
+                <div class="message bot-message">
+                    Hello! I'm the Warm-up Agent. Once you enter your details, we can get started!
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Type your answer..." autocomplete="off" disabled>
+                <button id="send-btn" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>

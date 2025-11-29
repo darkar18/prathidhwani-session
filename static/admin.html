@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Audience Intelligence</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .dashboard-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .charts-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .chat-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chart-container {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid var(--glass-border);
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Left: Visual Analytics -->
+        <div class="charts-panel">
+            <header>
+                <h1>📊 Audience Insights</h1>
+                <button onclick="refreshData()" style="padding: 8px 16px; font-size: 0.9rem;">Refresh Data</button>
+            </header>
+
+            <div class="chart-container">
+                <h2>Experience Levels</h2>
+                <canvas id="experienceChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Programming Confidence</h2>
+                <canvas id="confidenceChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Top Domains</h2>
+                <canvas id="domainChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Right: Admin Chat -->
+        <div class="chat-panel">
+            <header>
+                <h1>💬 Ask Analytics Agent</h1>
+            </header>
+
+            <div id="chat-window">
+                <div class="message bot-message">
+                    Hi Admin! I can answer questions about the audience data. Try "How many beginners?" or "List
+                    interests".
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="admin-input" placeholder="Ask a question about the data..." autocomplete="off">
+                <button id="admin-send-btn">Ask</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+flask
+pandas
+openpyxl
+google-generativeai
+langgraph
+langchain
+langchain-google-genai
